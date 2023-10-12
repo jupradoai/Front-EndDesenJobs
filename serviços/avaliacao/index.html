@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link href="/serviços/avaliacao/style.css" rel="stylesheet" type="text/css" />
+  <script src="/serviços/avaliacao/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="shortcut icon" href="/arquivos/DesenjobsLogo.png">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-sun-gradient">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+        <img src="/arquivos/logoDesenjobs.png" alt="Logo da Minha Empresa" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto ">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="/index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/empresa/index.html">Empresas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/serviços/index.html">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/sobre/index.html">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/login/index.html">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="quiz-container">
+      <div class="title">
+        <p>Avalie sua empresa! Descubra o nível de comprometimento com a ODS 8</p>
+      </div>
+      <div class="company-input">
+        <label for="companyName">Nome da Empresa:</label>
+        <input type="text" id="companyName" name="companyName" required>
+      </div>
+      <br>
+      <div class="quiz-wrapper">
+        <div id="question" class="question"></div>
+        <label class="option">
+          <input type="radio" name="option" value="1" />
+          <span class="option1"></span>
+        </label>
+        <label class="option">
+          <input type="radio" name="option" value="2" />
+          <span class="option2"></span>
+        </label>
+        <label class="option">
+          <input type="radio" name="option" value="3" />
+          <span class="option3"></span>
+        </label>
+        <br>
+        <br>
+        <div class="user-comments" style="display: none;">
+        <label for="userComment">Comentários ou sugestões de melhoria:</label>
+        <br>
+        <textarea id="userComment" name="userComment" rows="4" cols="50"></textarea>
+        </div>
+
+      </div>
+
+
+      <!-- Buttons --><br>
+      <div class="controls">
+        <button class="previous">Voltar</button>
+        <button class="next">Avançar</button>
+      </div>
+      
+    </div>
+
+    <div class="result" id="recommendations">
+    </div>
+
+    <script>
+      // QUESTIONS
+
+      const questions = [
+        {
+          "question": "Comprometimento da Alta Direção: A alta direção da empresa demonstra comprometimento com práticas sustentáveis e crescimento econômico responsável?",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": " Não ",
+          "answer2Total": "0",
+          "answer3": "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Comprometimento da Alta Direção: Existe um representante designado para liderar as iniciativas de sustentabilidade e responsabilidade social?",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3": "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question":
+            "Política de Sustentabilidade e Responsabilidade Social (ISO 26000):  A empresa possui uma política de responsabilidade social que define seus compromissos com práticas éticas e responsáveis?  ",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3": "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Política de Sustentabilidade e Responsabilidade Social (ISO 26000):  A política ambiental (ISO 14001) da empresa também inclui objetivos e compromissos claros em relação ao meio ambiente? ",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3":
+            "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Análise de Aspectos e Impactos (ISO 14001):  A empresa realizou uma análise ambiental para identificar seus aspectos e impactos ambientais?",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3": "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question":
+            "Análise de Aspectos e Impactos (ISO 14001):  Foram identificadas áreas de melhoria e oportunidades para reduzir o impacto ambiental? ",
+          "answer1":
+            "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3": "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Diagnóstico de Responsabilidade Social (ISO 26000):  A empresa conduziu um diagnóstico para entender as áreas de responsabilidade social relevantes para suas operações? ",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": " Não",
+          "answer2Total": "0",
+          "answer3": "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+
+        {
+          "question": "Envolvimento de Partes Interessadas (ISO 26000):  A empresa identificou todas as partes interessadas relevantes e as envolve em discussões sobre práticas sustentáveis e responsabilidade social?  ",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3":
+            "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Envolvimento de Partes Interessadas (ISO 26000):  Há mecanismos para coletar feedback e responder às preocupações das partes interessadas?",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3":
+            "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Planos de Ação:  A empresa desenvolveu planos de ação para atingir seus objetivos ambientais e de responsabilidade social? ",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3":
+            "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Planos de Ação:Os recursos necessários foram alocados para implementar esses planos? ",
+          "answer1": "Sim",
+          "answer1Total": "10",
+          "answer2": "Não",
+          "answer2Total": "0",
+          "answer3":
+            "Está em fase de planejamento e/ou implementação",
+          "answer3Total": "5"
+        },
+        {
+          "question": "Qual é o seu vínculo com a empresa ?",
+          "answer1": "Funcionário",
+          "answer1Total": "0",
+          "answer2": "Cliente",
+          "answer2Total": "0",
+          "answer3":
+            "Fornecedor",
+          "answer3Total": "0"
+        }
+      ]
+
+
+
+      let currentQuestion = 0;
+      let score = [];
+      let selectedAnswersData = [];
+      const totalQuestions = questions.length;
+
+      const container = document.querySelector('.quiz-container');
+      const questionEl = document.querySelector('.question');
+      const option1 = document.querySelector('.option1');
+      const option2 = document.querySelector('.option2');
+      const option3 = document.querySelector('.option3');
+      const nextButton = document.querySelector('.next');
+      const previousButton = document.querySelector('.previous');
+      const result = document.querySelector('.result');
+
+      // Function to generate question
+      function generateQuestions(index) {
+        // Select each question by passing it a particular index
+        const question = questions[index];
+        const option1Total = questions[index].answer1Total;
+        const option2Total = questions[index].answer2Total;
+        const option3Total = questions[index].answer3Total;
+        // Populate html elements
+        questionEl.innerHTML = `${index + 1}. ${question.question}`
+        option1.setAttribute('data-total', `${option1Total}`);
+        option2.setAttribute('data-total', `${option2Total}`);
+        option3.setAttribute('data-total', `${option3Total}`);
+        option1.innerHTML = `${question.answer1}`
+        option2.innerHTML = `${question.answer2}`
+        option3.innerHTML = `${question.answer3}`
+      }
+
+
+      function loadNextQuestion() {
+        const selectedOption = document.querySelector('input[type="radio"]:checked');
+        // Check if there is a radio input checked
+        if (!selectedOption) {
+          alert('Por favor, selecione sua resposta!');
+          return;
+        }
+        // Get value of selected radio
+        const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
+
+        // Add the answer score to the score array
+        score.push(answerScore);
+
+        selectedAnswersData.push()
+
+
+        const totalScore = score.reduce((total, currentNum) => total + currentNum);
+
+        // Finally we increment the current question number (to be used as the index for each array)
+        currentQuestion++;
+
+        // Once finished clear checked
+        selectedOption.checked = false;
+        // If quiz is on the final question
+        if (currentQuestion == totalQuestions - 1) {
+          nextButton.textContent = 'Resultado';
+        }
+        // If the quiz is finished then we hide the questions container and show the results 
+        if (currentQuestion == totalQuestions) {
+          container.style.display = 'none';
+          showRecommendations(totalScore); // Chama a função para exibir as recomendações
+          return;
+        }
+        generateQuestions(currentQuestion);
+      }
+
+      // Function to load previous question
+      function loadPreviousQuestion() {
+        // Decrement questions index
+        currentQuestion--;
+        // Remove last array value
+        score.pop();
+        // Generate the question
+        generateQuestions(currentQuestion);
+      }
+
+      // Função para exibir as recomendações com base na pontuação
+      function showRecommendations(score) {
+        const recommendationsContainer = document.getElementById('recommendations');
+        let recommendationsText = '<h2>Recomendações DesenJobs:</h2>';
+
+        if (score >= 60) {
+          recommendationsText += recommendations.highScore.join('<br>');
+        } else if (score >= 30) {
+          recommendationsText += recommendations.mediumScore.join('<br>');
+        } else {
+          recommendationsText += recommendations.lowScore.join('<br>');
+        }
+
+        recommendationsContainer.innerHTML = recommendationsText;
+      }
+
+      // Objeto com recomendações personalizadas (ajuste de acordo com suas necessidades)
+      const recommendations = {
+        highScore: ["Sua empresa demonstrou um forte comprometimento com práticas sustentáveis e responsabilidade social. Continue a liderar pelo exemplo!",
+          "Continue a promover uma cultura de responsabilidade social em toda a organização."],
+        mediumScore: ["Sua empresa está no caminho certo, mas pode melhorar seu comprometimento com práticas sustentáveis. Considere desenvolver políticas e planos de ação mais robustos.",
+          "Avalie as áreas onde sua empresa pode ter um impacto mais positivo na ODS 8 e concentre-se nessas áreas."],
+        lowScore: ["Sua empresa precisa de um comprometimento mais forte com práticas sustentáveis e responsabilidade social. Considere desenvolver políticas claras e envolver todas as partes interessadas.",
+          "Realize uma análise mais detalhada de aspectos e impactos ambientais para identificar oportunidades de melhoria."]
+      };
+
+      generateQuestions(currentQuestion);
+      nextButton.addEventListener('click', loadNextQuestion);
+      previousButton.addEventListener('click', loadPreviousQuestion);
+
+      // Função para reiniciar o quiz
+      function restartQuiz() {
+        currentQuestion = 0;
+        score = [];
+        selectedAnswersData = [];
+        container.style.display = 'block';
+        result.innerHTML = '';
+        generateQuestions(currentQuestion);
+      }
+    </script>
+  </main>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>

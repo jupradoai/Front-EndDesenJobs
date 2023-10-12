@@ -1,0 +1,139 @@
+body,
+nav,
+a,
+.primary-text,
+.second-text,
+.btns button,
+.navbar-nav .nav-link {
+  font-family: 'playfair', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'playfair';
+  src: url(PlayfairDisplay-Italic-VariableFont_wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-sun-gradient {
+  background-color: #FFFAF2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  height: auto;
+
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link {
+  color: #0d0d0d;
+  border-radius: 18px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  background-color: rgb(230, 97, 0);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.sobre {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Estilo para a div que envolve a imagem */
+.image-container {
+  text-align: center; /* Centralizar horizontalmente */
+  margin-top: 20px; /* Adicione espaço acima da imagem */
+}
+
+/* Estilo para a imagem */
+.imgSobre {
+  max-width: 30%;
+  height: auto;
+}
+
+
+
+
+article p {
+  margin-bottom: 1.5em;
+   margin: 0 auto;
+  width: 960px;
+  text-align: left
+   margin-left: 50px;
+}
+article h2 {
+   margin: 0 auto;
+  width: 960px;
+  text-align: left
+   margin-left: 50px;
+}
+
+/* Estilo para o botão com a classe 'custom-btn' */
+.custom-btn {
+  width: 150px;
+  height: 50px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+  color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  left: 45%;
+}
+
+/* Estilo ao passar o mouse sobre o botão */
+.custom-btn:hover {
+  background: transparent;
+  color: #c64600;
+  box-shadow: none;
+}
+
+/* Efeito hover - Barra horizontal */
+.custom-btn::before,
+.custom-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #c64600;
+  transition: width 0.3s ease-out;
+}
+
+/* Efeito hover - Barra horizontal (aplicada aos dois lados) */
+.custom-btn::after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+/* Expandir barra horizontal ao passar o mouse */
+.custom-btn:hover::before,
+.custom-btn:hover::after {
+  width: 100%;
+}

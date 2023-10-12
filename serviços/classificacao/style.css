@@ -1,0 +1,207 @@
+body,
+nav,
+a,
+.primary-text,
+.second-text,
+.btns button,
+.navbar-nav .nav-link {
+  font-family: 'playfair', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'playfair';
+  src: url(PlayfairDisplay-Italic-VariableFont_wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-sun-gradient {
+  background-color: #FFFAF2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  height: auto;
+
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link {
+  color: #0d0d0d;
+  border-radius: 18px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  background-color: rgb(230, 97, 0);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+
+
+
+
+
+main {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ;
+}
+
+/* Textos conteudo principal */
+
+.primary-text {
+  width: 800px;
+  font-size: 3rem;
+  color: rgb(36, 92, 75);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'notoserif';
+  margin-top: 90px;
+}
+
+.second-text {
+  margin-bottom: 3rem;
+  /* Ajuste a margem inferior conforme necessário para criar menos espaço entre o texto e os botões */
+  font-size: 2rem;
+  color: rgb(14, 63, 16);
+  margin-top: 90px;
+  font-family: 'notoserif';
+}
+
+
+/* Botões */
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -2rem;
+  /* Ajuste o valor negativo para mover os botões para cima */
+}
+
+.btns button {
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid rgb(25, 97, 61);
+  color: rgb(73, 105, 84);
+  text-transform: uppercase;
+  background-color: white;
+  font-weight: bold;
+  letter-spacing: 0.4rem;
+  border-radius: 20px;
+  position: relative;
+  transition: 1.5s;
+  margin-top: 10px;
+}
+
+.btns button:hover {
+  color: rgb(253, 253, 245);
+  border: none;
+}
+
+.btns button:before {
+  content: ' ';
+  border-radius: 20px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+  height: 60px;
+  background-color: rgba(212, 243, 224, 0);
+  /* Defina a transparência do background-color para 0 */
+  z-index: -1;
+  transition: 2s;
+}
+
+.btns button:hover:before {
+  width: 50%;
+}
+
+/* Estilo para a imagem dentro da seção #sobre */
+#sobre img {
+  width: 100%;
+  /* Define a largura da imagem como 100% da largura da seção */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  display: block;
+  /* Garante que a imagem seja exibida como um bloco, não inline */
+  margin: 0 auto;
+  /* Centraliza horizontalmente a imagem */
+}
+
+/* Estilo para a seção #sobre */
+#sobre {
+  text-align: center;
+  /* Centraliza o texto horizontalmente */
+}
+
+/* Estilo para a tabela */
+.container.pesquisa {
+  margin-top: 20px;
+}
+
+table {
+  font-family: Times New Roman;
+  border-collapse: collapse;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+  /* Espaçamento entre o formulário e a tabela */
+}
+
+th {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(360deg, transparent, #ffffff);
+}
+
+td {
+  text-align: left;
+  padding: 10px;
+  background: linear-gradient(360deg, transparent, #ffffff);
+}
+
+tr:hover {
+  background-color: rgb(240, 239, 240);
+  color: #0d0c0c;
+}
+
+.pesquisa {
+  margin-top: 20px;
+}
+
+.small-input {
+  font-size: 14px;
+  /* Tamanho da fonte menor */
+  padding: 2px 4px;
+  /* Espaçamento interno menor */
+}
+
+.filter-buttons button {
+  background-color: #FFFAF2;
+}

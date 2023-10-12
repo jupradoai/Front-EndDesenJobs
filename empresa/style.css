@@ -1,0 +1,290 @@
+body,
+nav,
+a,
+.primary-text,
+.second-text,
+.btns button,
+.navbar-nav .nav-link {
+  font-family: 'playfair', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'playfair';
+  src: url(PlayfairDisplay-Italic-VariableFont_wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-sun-gradient {
+  background-color: #FFFAF2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  height: auto;
+
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link {
+  color: #0d0d0d;
+  border-radius: 18px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  background-color: rgb(230, 97, 0);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*classe container card*/
+.contCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+/*card 1 BTG PACTUAL*/
+.card1 {
+  background: linear-gradient(#307ae0 0%, #0b2859 100%);
+}
+
+.box1 {
+  background: linear-gradient(#307ae0 0%, #0b2859 100%);
+}
+
+/*card 2 SUZANO*/
+.card2 {
+  background: linear-gradient(#abee2d 0%, #6f9b1fb7 100%);
+}
+
+.box2 {
+  background: linear-gradient(#9fdd2b 0%, #6f9b1fb7 100%);
+}
+
+/*card 3 AMBEV(meu favorito, inclusive :p)*/
+.card3 {
+  background: linear-gradient(#da2036 0%, #79111e 100%);
+}
+
+.box3 {
+  background: linear-gradient(#da2036 0%, #79111e 100%);
+}
+
+/*card 4 KLABIN*/
+.card4 {
+  background: linear-gradient(#748f25 0%, #3d4b14 100%);
+}
+
+.box4 {
+  background: linear-gradient(#748f25 0%, #3d4b14 100%);
+}
+
+/*card 5 BLASKEM*/
+.card5 {
+  background: linear-gradient(#f0be09 0%, #EC6607 100%);
+}
+
+.box5 {
+  background: linear-gradient(#f0be09 0%, #EC6607 100%);
+}
+
+/*card 6 CCR*/
+.card6 {
+  background: linear-gradient(#db6170 0%, #a81728 100%);
+}
+
+.box6 {
+  background: linear-gradient(#db6170 0%, #a81728 100%);
+}
+
+
+/*container da caixa de fora(caixa maior)*/
+.contCard #cards {
+  position: relative;
+  width: 320px;
+  height: 460px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  padding-right: 40px;
+  padding-bottom: 35px;
+}
+
+/*container da caixa de dentro(caixa menor)*/
+.contCard #cards #boxx {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  bottom: 80px;
+  height: 420px;
+  border: 2px solid black;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+}
+
+/*assim que passar o mouse em cima, altera a cor e move para cima*/
+.contCard #cards:hover .box1 {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#3481ee 30%, #0b2859 100%);
+}
+
+.contCard #cards:hover .box2 {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#abee2d 0%, #6f9b1fb7 100%);
+}
+
+.contCard #cards:hover .box3 {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#e42037 0%, #79111e 100%);
+}
+
+.contCard #cards:hover .box4 {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#7d9927 0%, #3d4b14 100%);
+}
+
+.contCard #cards:hover .box5 {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#ffc800 0%, #EC6607 100%);
+}
+
+.contCard #cards:hover .box6 {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#f06979 0%, #a81728 100%);
+}
+
+/*container do conteudo de caixa de dentro*/
+.contCard #cards #boxx .conteudo {
+  padding: 20px;
+  text-align: center;
+}
+
+/*titulo da caixa*/
+.contCard #cards #boxx .conteudo h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8em;
+  color: rgba(116, 81, 81, 0.05);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.contCard #cards:hover #boxx .conteudo h2 {
+  color: rgba(204, 202, 202, 0.1);
+}
+
+/*detalhe ou marca d'agua(DJ de DesenJobs) por dentro da caixa*/
+.contCard #cards #boxx .conteudo h3 {
+  font-size: 1.8em;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.contCard #cards:hover #boxx .conteudo h3,
+.contCard #cards:hover #boxx .conteudo p {
+  color: #ffffff;
+}
+
+/*paragrafo da caixa*/
+.contCard #cards #boxx .conteudo p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.842);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+/*botão "Saiba mais*/
+.contCard #cards #boxx .conteudo a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #fff;
+  margin-top: 15px;
+  border-radius: 20px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.contCard #cards:hover #boxx .conteudo a {
+  letter-spacing: 2px;
+}
+
+
+.info {
+  display: none;
+}
+
+/* Estilo para o campo de pesquisa */
+.search-box {
+  position: relative;
+  background: #ffffff;
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-text {
+  background: none;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+}
+
+#search {
+  width: 200px;
+  /* Largura do campo de pesquisa */
+  padding: 8px;
+}
+
+.logoEmpresa {
+  width: 100px; /* Ajuste o valor conforme necessário */
+  height: auto; /* Manter a proporção da largura */
+}

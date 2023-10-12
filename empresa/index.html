@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquise sua empresa</title>
+  <link href="/empresa/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="/empresa/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="shortcut icon" href="/arquivos/DesenjobsLogo.png">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-sun-gradient">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+        <img src="/arquivos/logoDesenjobs.png" alt="Logo da Minha Empresa" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto ">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="/index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/empresa/index.html">Empresas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/serviços/index.html">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/sobre/index.html">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/login/index.html">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <br>
+    <div class="search-box" style="margin-left: 20px;">
+      <input type="text" class="search-text" placeholder="Pesquisar...">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+
+    <div class="contCard">
+      <div class="card1" id="cards">
+        <div class="box1" id="boxx">
+          <div class="conteudo">
+            <h3>BTG PACTUAL</h3>
+            <p>O BTG Pactual é uma empresa de serviços financeiros que atua no Brasil e no exterior.
+              A empresa tem um compromisso com a responsabilidade social e a sustentabilidade, e realiza uma série de
+              ações nessa área.</p>
+            <a href="/empresa/BTG/index.html">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="card2" id="cards">
+        <div class="box2" id="boxx">
+          <div class="conteudo">
+            <h3>SUZANO</h3>
+            <p>A Suzano é uma empresa brasileira de papel e celulose que tem um compromisso com a responsabilidade
+              social e a sustentabilidade.</p>
+            <a href="/empresa/SUZANO/index.html">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="card3" id="cards">
+        <div class="box3" id="boxx">
+          <div class="conteudo">
+            <h3>AMBEV</h3>
+            <p>A Ambev é uma empresa brasileira de bebidas que tem um compromisso com a responsabilidade social e a
+              sustentabilidade.</p>
+            <a href="/empresa/AMBEV/index.html">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card4" id="cards">
+        <div class="box4" id="boxx">
+          <div class="conteudo">
+            <h3>KLABIN</h3>
+            <p>A Klabin é uma empresa brasileira de papel e celulose que tem um compromisso com a responsabilidade
+              social e a sustentabilidade. </p>
+            <a href="/empresa/KLABIN/index.html">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="card5" id="cards">
+        <div class="box5" id="boxx">
+          <div class="conteudo">
+            <h3>BRASKEM</h3>
+            <p>A Braskem é uma empresa brasileira de petroquímica que tem um compromisso com a responsabilidade social e
+              a sustentabilidade.</p>
+            <a href="/empresa/BRASKEM/index.html">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="card6" id="cards">
+        <div class="box6" id="boxx">
+          <div class="conteudo">
+            <h3>CCR</h3>
+            <p>A CCR é uma empresa brasileira de infraestrutura que tem um compromisso com a responsabilidade social e a
+              sustentabilidade.</p>
+            <a href="/empresa/CCR/index.html">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("search").addEventListener("keyup", function () {
+        var searchText = this.value.toLowerCase();
+        var empresaCards = document.querySelectorAll(".empresa-card");
+
+        empresaCards.forEach(function (card) {
+          var cardText = card.textContent.toLowerCase();
+          if (cardText.includes(searchText)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>

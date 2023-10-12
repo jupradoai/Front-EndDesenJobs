@@ -1,0 +1,84 @@
+body,
+nav,
+a,
+.primary-text,
+.second-text,
+.btns button,
+.navbar-nav .nav-link {
+  font-family: 'playfair', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'playfair';
+  src: url(PlayfairDisplay-Italic-VariableFont_wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-sun-gradient {
+  background-color: #FFFAF2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  height: auto;
+
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link {
+  color: #0d0d0d;
+  border-radius: 18px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  background-color: rgb(230, 97, 0);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.article-img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.custom-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+
+.image-container {
+  text-align: center; /* Centralizar horizontalmente */
+  margin-top: 20px; /* Adicione espaço acima da imagem */
+}
+
+/* Estilo para a imagem */
+.imgSobre {
+  max-width: 30%;
+  height: auto;
+}

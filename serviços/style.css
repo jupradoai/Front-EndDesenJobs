@@ -1,0 +1,121 @@
+body,
+nav,
+a,
+.primary-text,
+.second-text,
+.btns button,
+.navbar-nav .nav-link {
+  font-family: 'playfair', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'playfair';
+  src: url(PlayfairDisplay-Italic-VariableFont_wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-sun-gradient {
+  background-color: #FFFAF2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  height: auto;
+
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link {
+  color: #0d0d0d;
+  border-radius: 18px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  background-color: rgb(230, 97, 0);
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.card-body {
+  background: #FFFAF2;
+
+}
+
+.card {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões */
+.btns {
+  display: flex;
+  justify-content: left;
+  gap: 45px;
+  margin-top: 2rem;
+  margin-bottom: 50px;
+}
+
+/* Estilo base para todos os botões */
+.btns button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+  color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+/* Estilo ao passar o mouse sobre os botões */
+.btns button:hover {
+  background: transparent;
+  color: #c64600;
+  box-shadow: none;
+}
+
+/* Efeito hover - Barra horizontal */
+.btns button::before,
+.btns button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #c64600;
+  transition: width 0.3s ease-out;
+}
+
+/* Efeito hover - Barra horizontal (aplicada aos dois lados) */
+.btns button::after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+/* Expandir barra horizontal ao passar o mouse */
+.btns button:hover::before,
+.btns button:hover::after {
+  width: 100%;
+}

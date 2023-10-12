@@ -1,0 +1,194 @@
+body,
+nav,
+a,
+.primary-text,
+.second-text,
+.btns button,
+.navbar-nav .nav-link {
+  font-family: 'playfair', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'playfair';
+  src: url(PlayfairDisplay-Italic-VariableFont_wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'notoserif';
+  src: url(NotoSerifGeorgian-VariableFont_wdth\,wght.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+}
+
+ul {
+  list-style: none;
+
+}
+
+.navbar-sun-gradient {
+  background-color: #FFFAF2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  height: auto;
+
+}
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: rgb(230, 97, 0);
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+
+.navbar-sun-gradient .navbar-nav .nav-link {
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+
+
+
+main {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ;
+}
+
+/* Textos conteudo principal */
+
+.primary-text {
+  width: 800px;
+  font-size: 3rem;
+  color: rgb(36, 92, 75);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'notoserif';
+  margin-top: 90px;
+}
+
+.second-text {
+  margin-bottom: 3rem;
+  /* Ajuste a margem inferior conforme necessário para criar menos espaço entre o texto e os botões */
+  font-size: 2rem;
+  color: rgb(14, 63, 16);
+  margin-top: 90px;
+  font-family: 'notoserif';
+}
+
+
+/* Botões */
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -2rem;
+  /* Ajuste o valor negativo para mover os botões para cima */
+}
+
+.btns button {
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid rgb(25, 97, 61);
+  color: rgb(73, 105, 84);
+  text-transform: uppercase;
+  background-color: white;
+  font-weight: bold;
+  letter-spacing: 0.4rem;
+  border-radius: 20px;
+  position: relative;
+  transition: 1.5s;
+  margin-top: 10px;
+}
+
+.btns button:hover {
+  color: rgb(253, 253, 245);
+  border: none;
+}
+
+.btns button:before {
+  content: ' ';
+  border-radius: 20px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+  height: 60px;
+  background-color: rgba(212, 243, 224, 0);
+  /* Defina a transparência do background-color para 0 */
+  z-index: -1;
+  transition: 2s;
+}
+
+.btns button:hover:before {
+  width: 50%;
+}
+
+/*newCSS2023*/
+.logo {
+  width: 200px;
+  /* Defina a largura desejada para o logo */
+  height: auto;
+  /* Isso manterá a proporção da imagem */
+  position: absolute;
+  /* Define a posição absoluta para o logo */
+  top: 10px;
+  /* Ajuste a distância do topo conforme necessário */
+  left: 10px;
+  /* Ajuste a distância da esquerda conforme necessário */
+}
+
+.navbar-nav .nav-link {
+  margin-left: 300px;
+  /* Ajuste a margem esquerda conforme necessário para criar espaço entre o link "Home" e outros links no menu */
+}
+
+
+.navbar-sun-gradient {
+  background: transparent;
+}
+
+
+.navbar-sun-gradient .navbar-nav .nav-link:hover {
+  color: #fff;
+  /* Cor do texto quando o mouse passar por cima */
+  background-color: rgb(230, 97, 0);
+  /* Cor de fundo do botão quando o mouse passar por cima */
+  transition: background-color 0.3s, color 0.3s;
+  /* Adiciona uma transição suave */
+}
+
+/* Estilo dos botões de menu arredondados */
+.navbar-sun-gradient .navbar-nav .nav-link {
+  border-radius: 20px;
+  /* Adiciona um arredondamento de borda de 20px */
+  padding: 10px 20px;
+  /* Ajusta o preenchimento para melhorar a aparência */
+  transition: background-color 0.3s, color 0.3s;
+  /* Adiciona uma transição suave */
+}
